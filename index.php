@@ -313,7 +313,9 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
+  <div id="" class="">
+    <?php include_once "./templates/tabela.html" ?>
+  </div>
     <!-- Main content -->
     <div class="content">
 
