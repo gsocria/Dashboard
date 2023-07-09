@@ -1,5 +1,6 @@
 <!-- component -->
-<?php include_once './func/func.php'?>
+<?php include_once './func/func.php'?>]
+<script></script>
 <script src="https://cdn.tailwindcss.com"></script>
 
 <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
@@ -7,10 +8,10 @@
       <thead class="bg-gray-50">
         <tr>
           <th scope="col" class="px-6 py-4 font-medium text-gray-900">Nome</th>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">State</th>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Role</th>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Team</th>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Status</th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Preço</th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">descriçao</th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">açoes</th>
         </tr>
       </thead>
       <tbody class="divide-y divide-gray-100 border-t border-gray-100">
