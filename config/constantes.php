@@ -13,7 +13,7 @@ $servidorLocal = true;
 if ($servidorLocal) {
     define('HOST', 'localhost');
     define('USER', 'root');
-    define('PASS', '');
+    define('PASS', 'root');
     define('DBNAME', 'db_pizzaria');
 } else {
     define('HOST', 'localhost');
