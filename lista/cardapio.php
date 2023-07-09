@@ -1,6 +1,11 @@
 <!-- component -->
-<?php include_once './func/func.php'?>]
-<script></script>
+
+<?php 
+include_once('./config/constantes.php');
+include_once('./config/conexao.php');
+include_once('./func/func.php');
+?>
+
 <script src="https://cdn.tailwindcss.com"></script>
 
 <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">

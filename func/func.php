@@ -1,5 +1,6 @@
 <?php
-include_once 'conexao.php';
+include_once('./config/constantes.php');
+include_once('./config/conexao.php');
 
 function create($table, $fields, $values)
 {

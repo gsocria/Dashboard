@@ -212,19 +212,19 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="./index.html" class="nav-link">
+                  <a href="#" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Dashboard v1</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index2.html" class="nav-link">
+                  <a href="#" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Dashboard v2</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index3.html" class="nav-link active">
+                  <a href="#" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Dashboard v3</p>
                   </a>
@@ -332,12 +332,11 @@
       <div class="content">
         <div class="container-fluid">
           <!-- component -->
-          <h1>lista padrao</h1>
-          <?php include_once './templates/tabela.html'?>
 
-          <h1>cardapio</h1>
+
+          <h1>eventos</h1>
           <div>
-            <?php include_once './lista/cardapio.php'?>
+            <?php include_once './lista/eventos.php'?>
           </div>
         </div>
         <!-- /.container-fluid -->
@@ -364,6 +363,8 @@
   <!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->
+
+  <script src="script.js"></script>
 
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>
