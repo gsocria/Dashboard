@@ -1,24 +1,26 @@
-const login_open = document.getElementById('login_open');
-const login_close = document.getElementById('login_close');
-const login_panel = document.getElementById('login_panel');
+const adicionar_open = document.getElementById('adicionar_open');
+const adicionar_close = document.getElementById('adicionar_close');
+const adicionar_panel = document.getElementById('adicionar_panel');
 
 function loginModalState() {
-    if (login_panel.classList.contains('hidden')) {
+    if (adicionar_panel.classList.contains('hidden')) {
         // Show modal
-        login_panel.classList.remove('hidden');
-        login_panel.classList.add('flex');
+        adicionar_panel.classList.remove('hidden');
+        adicionar_panel.classList.add('flex');
 
         // Start animation open
-        login_panel.classList.add('card_open');
+        adicionar_panel.classList.add('adicionar_open');
     } else {
         // Delete modal
-        login_panel.classList.add('hidden');
-        login_panel.classList.remove('flex');
+        adicionar_panel.classList.add('hidden');
+        adicionar_panel.classList.remove('flex');
 
         // Remove animation open
-        login_panel.classList.remove('card_open');
+        adicionar_panel.classList.remove('adicionar_open');
     }
 }
 
-login_open.addEventListener('click', loginModalState);
-login_close.addEventListener('click', loginModalState);
+adicionar_open.addEventListener('click', loginModalState);
+adicionar_close.addEventListener('click', loginModalState);
+
+
