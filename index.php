@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+include_once './config/constantes.php';
+include_once './config/conexao.php';
+include_once './func/func.php';
 
+
+?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -314,6 +320,11 @@
     <div class="content-wrapper">
       
             <?php include_once './lista/eventos.php'?>
+    </div>
+    
+    <div class="content-wrapper">
+      
+            <?php include_once './lista/cardapio.php'?>
     </div>
     <!-- /.content-wrapper -->
 
