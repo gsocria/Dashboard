@@ -316,10 +316,6 @@ include_once URLBASEPATH . '/func/func.php';
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      
-            <?php include_once './lista/eventos.php'?>
-    </div>
     
     <div class="content-wrapper">
       
