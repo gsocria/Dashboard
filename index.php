@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <?php
 include_once './config/constantes.php';
-include_once './config/conexao.php';
-include_once './func/func.php';
-
+include_once URLBASEPATH . '/config/conexao.php';
+include_once URLBASEPATH . '/func/func.php';
 
 ?>
 
