@@ -1,6 +1,6 @@
 <?php
-include_once('./config/constantes.php');
-include_once('./config/conexao.php');
+include_once URLBASEPATH . '/config/constantes.php';
+include_once URLBASEPATH . '/config/conexao.php';
 
 function create($table, $fields, $values)
 {
@@ -41,11 +41,11 @@ function update($table, $fields, $id, $values)
     }
 
 }
-function delete($table, $id)
+function deletar($table, $id,$idTable)
 {
     $conn = conectar();
     try {
-        $listar = $conn->prepare("DELETE FROM$table WHERE id=$id");
+        $listar = $conn->prepare("DELETE FROM $table WHERE $idTable=$id");
         $listar->execute();
         if ($listar->rowCount() > 0) {
             return $listar->fetchAll(PDO::FETCH_OBJ);
