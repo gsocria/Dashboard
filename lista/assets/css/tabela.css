@@ -1,0 +1,41 @@
+:root {
+    --shadow:0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --ring-offset-shadow:0 0 #0000;
+    --ring-shadow:0 0 #0000;
+}
+
+#adicionar_panel {
+    animation-duration: 1.15s;
+    animation-name: adicionar_open;
+}
+
+
+@keyframes adicionar_open {
+    from {
+        height: 1%;
+        
+    }
+
+    to {
+        height: 100%;
+        
+    }
+}
+
+#editar_panel {
+    animation-duration: 1.15s;
+    animation-name: editar_open;
+}
+
+@keyframes editar_open {
+    from {
+        right: 1%;
+        
+    }
+
+    to {
+        right: 100%;
+        
+    }
+}
+

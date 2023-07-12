@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<?php 
+<html lang="pt-br">
+<?php
 include_once './config/constantes.php';
 include_once './config/conexao.php';
 include_once './func/func.php';
 
 
 ?>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +22,7 @@ include_once './func/func.php';
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 
-  <link rel="stylesheet" href="./lista/assets/css/lista.css">
+  <link rel="stylesheet" href="./lista/assets/css/tabela.css">
 </head>
 <!--
 `body` tag options:
@@ -316,21 +317,13 @@ include_once './func/func.php';
       <!-- /.sidebar -->
     </aside>
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      
-            <?php include_once './lista/eventos.php'?>
-    </div>
-    
-    <div class="content-wrapper">
-      
-            <?php include_once './lista/cardapio.php'?>
-    </div>
-    <!-- /.content-wrapper -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
+
+      <div class="content-wrapper">
+
+        <?php include_once './lista/funcionario.php' ?>
+      </div>
+
     </aside>
     <!-- /.control-sidebar -->
 
@@ -347,7 +340,8 @@ include_once './func/func.php';
 
   <!-- REQUIRED SCRIPTS -->
 
-  <script src="./lista/assets/js/modal.js"></script>
+  <script src="./lista/assets/js/modalAdicionar.js"></script>
+  <script src="./lista/assets/js/modalEditar.js"></script>
 
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>

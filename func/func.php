@@ -25,7 +25,7 @@ function update($table, $fields, $id, $values)
 {
     $conn = conectar();
     try {
-        $listar = $conn->prepare("UPDATE produtos SET $fields = $values WHERE
+        $listar = $conn->prepare("UPDATE $table SET $fields = $values WHERE
         id = $id");
         $listar->execute();
         if ($listar->rowCount() > 0) {

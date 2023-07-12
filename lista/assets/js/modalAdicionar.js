@@ -2,7 +2,7 @@ const adicionar_open = document.getElementById('adicionar_open');
 const adicionar_close = document.getElementById('adicionar_close');
 const adicionar_panel = document.getElementById('adicionar_panel');
 
-function loginModalState() {
+function adicionar() {
     if (adicionar_panel.classList.contains('hidden')) {
         // Show modal
         adicionar_panel.classList.remove('hidden');
@@ -20,8 +20,11 @@ function loginModalState() {
     }
 }
 
-adicionar_open.addEventListener('click', loginModalState);
-adicionar_close.addEventListener('click', loginModalState);
+adicionar_open.addEventListener('click', adicionar);
+adicionar_close.addEventListener('click', adicionar);
+
+
+
 
 
 
