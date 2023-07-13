@@ -22,7 +22,7 @@
     }
 }
 
-#editar_panel {
+.editar_panel {
     animation-duration: 1.15s;
     animation-name: editar_open;
 }
