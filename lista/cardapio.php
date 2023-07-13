@@ -57,21 +57,43 @@
               </div>
             </div>
             <div class="my-5 mr-5 ml-5 flex  justify-center">
-              <form action="./redirecionamento/redirecionamentoLogin.php" method="post" class="w-full max-w-sm">
+              <form action="./formsCreate/cardapioCreate.php" method="post" class="w-full max-w-sm">
 
                 <div class="mb-4">
-                  <label for="email-login" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-                  <input type="text" name="email-login" id="email-login"
+                  <label for="email-login" class="block text-gray-700 text-sm font-bold mb-2">Nome do prato</label>
+                  <input type="text" name="nome-prato" id="email-login"
                     class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     required>
                 </div>
 
                 <div class="mb-4">
-                  <label for="senha-login" class="block text-gray-700 text-sm font-bold mb-2">Senha:</label>
-                  <input type="password" name="senha-login" id="senha-login"
+                  <label for="senha-login" class="block text-gray-700 text-sm font-bold mb-2">Tipo do prato</label>
+                  <select name="tipo-menu" id="">
+                    <?php
+                    $listarMenu = viewAll('menucardapio', '*');
+                    foreach ($listarMenu as $menuItems) {
+                      $idMenu = $menuItems->idmenuCardapio;
+                      $nomeMenu = $menuItems->nomeMenu;
+                      ?>
+                      <option value="<?php echo $idMenu ?>"> <?php echo $nomeMenu ?></option>
+                    <?php
+                    }
+                    ?>
+                  </select>
+                </div>
+                <div class="mb-4">
+                  <label for="senha-login" class="block text-gray-700 text-sm font-bold mb-2">Preço</label>
+                  <input type="password" name="preco" id="senha-login"
                     class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     required>
                 </div>
+                <div class="mb-4">
+                  <label for="upload-imagem" class="block text-gray-700 text-sm font-bold mb-2">Imagem</label>
+                  <input type="file" name="imagem" id="upload-imagem" accept="image/*"
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    required>
+                </div>
+
 
                 <div class="flex justify-center">
                   <button type="submit" class="bg-black text-white font-bold py-2 px-4 rounded">
@@ -108,7 +130,7 @@
             $listarCardapio = viewAll('*', 'cardapio');
 
             if ($listarCardapio !== false) {
-               foreach ($listarCardapio as $listarCardapioItem) {
+              foreach ($listarCardapio as $listarCardapioItem) {
                 $idCardapio = $listarCardapioItem->idcardapio;
                 $img = $listarCardapioItem->img;
                 $descricao = $listarCardapioItem->descricao;

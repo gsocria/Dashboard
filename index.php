@@ -318,6 +318,15 @@ include_once URLBASEPATH . '/func/func.php';
 
 
 
+    <!-- Content Wrapper. Contains page content -->
+    
+    <div class="content-wrapper">
+      
+            <?php include_once './lista/cardapio.php'?>
+    </div>
+    <!-- /.content-wrapper -->
+
+
       <div class="content-wrapper">
 
         <?php include_once './lista/funcionario.php' ?>
