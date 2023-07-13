@@ -21,26 +21,26 @@ function create($table, $fields, $values)
     }
 
 }
-function update($table, $fields, $id, $values)
-{
+
+
+function update($table, $clauses, $idtabela, $id) {
     $conn = conectar();
     try {
-        $listar = $conn->prepare("UPDATE produtos SET $fields = $values WHERE
-        id = $id");
+        $listar = $conn->prepare("UPDATE $table SET $clauses WHERE $idtabela = :id");
+        $listar->bindParam(':id', $id);
         $listar->execute();
+        
         if ($listar->rowCount() > 0) {
-            return $listar->fetchAll(PDO::FETCH_OBJ);
+            return $listar->fetch(PDO::FETCH_OBJ);
         } else {
             return false;
         }
 
     } catch (PDOException $e) {
-        echo 'Exception:';
-        return ($e->getMessage());
-
+        return $e->getMessage();
     }
-
 }
+
 function deletar($table, $id,$idTable)
 {
     $conn = conectar();

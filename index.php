@@ -6,6 +6,7 @@ include_once URLBASEPATH . '/config/conexao.php';
 include_once URLBASEPATH . '/func/func.php';
 
 ?>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +21,7 @@ include_once URLBASEPATH . '/func/func.php';
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 
-  <link rel="stylesheet" href="./lista/assets/css/lista.css">
+  <link rel="stylesheet" href="./lista/assets/css/tabela.css">
 </head>
 <!--
 `body` tag options:
@@ -315,6 +316,8 @@ include_once URLBASEPATH . '/func/func.php';
       <!-- /.sidebar -->
     </aside>
 
+
+
     <!-- Content Wrapper. Contains page content -->
     
     <div class="content-wrapper">
@@ -323,9 +326,12 @@ include_once URLBASEPATH . '/func/func.php';
     </div>
     <!-- /.content-wrapper -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
+
+      <div class="content-wrapper">
+
+        <?php include_once './lista/funcionario.php' ?>
+      </div>
+
     </aside>
     <!-- /.control-sidebar -->
 
@@ -342,7 +348,8 @@ include_once URLBASEPATH . '/func/func.php';
 
   <!-- REQUIRED SCRIPTS -->
 
-  <script src="./lista/assets/js/modal.js"></script>
+  <script src="./lista/assets/js/modalAdicionar.js"></script>
+  <script src="./lista/assets/js/modalEditar.js"></script>
 
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>
