@@ -22,14 +22,14 @@
     }
 }
 
-.editar_panel {
+#editar_panel {
     animation-duration: 1.15s;
     animation-name: editar_open;
 }
 
 @keyframes editar_open {
     from {
-        right: 1%;
+        right: 0;
         
     }
 

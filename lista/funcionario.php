@@ -104,21 +104,23 @@
                             <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ações</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-                        <?php
 
-                        $listarFuncionario = viewAll('*', 'funcionario');
+                    <?php
 
-                        foreach ($listarFuncionario as $listarFuncionarioItem) {
-                            $idfuncionario = $listarFuncionarioItem->idfuncionario;
-                            $setor = $listarFuncionarioItem->setor;
-                            $salario = $listarFuncionarioItem->salario;
-                            $nome = $listarFuncionarioItem->nome;
-                            $cadastro = $listarFuncionarioItem->cadastro;
+                    $listarFuncionario = viewAll('*', 'funcionario');
+
+                    foreach ($listarFuncionario as $listarFuncionarioItem) {
+                        $idfuncionario = $listarFuncionarioItem->idfuncionario;
+                        $setor = $listarFuncionarioItem->setor;
+                        $salario = $listarFuncionarioItem->salario;
+                        $nome = $listarFuncionarioItem->nome;
+                        $cadastro = $listarFuncionarioItem->cadastro;
 
 
 
-                        ?>
+                    ?>
+                        <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+
 
                             <tr class="hover:bg-gray-50">
                                 <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
@@ -156,77 +158,80 @@
                                         </a>
                                         </a>
 
-                                        <a id="editar_open" x-data="{ tooltip: 'Edite' }" href="#">
+                                        <button  onClick="editar()">
                                             <input class="hidden" type="text" name="editValue" value="<?php echo $idfuncionario ?>">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6" x-tooltip="tooltip">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                                             </svg>
-                                        </a>
-
-                                    <?php
-
-                                    $_SESSION['valor'] = $idfuncionario;
-                                }
-                                    ?>
+                                        </button>
 
 
 
-                                    <div id="editar_panel" class="main-modal fixed w-full inset-0 z-50 overflow-hidden flex justify-center items-center hidden">
-                                        <div class="modal_container bg-white w-4/12 md:max-w-11/12 mx-auto z-50 overflow-y-auto">
-                                            <div class="modal-content py-4 text-left px-6">
-                                                <div class="flex justify-between items-center pb-3">
-                                                    <p class="text-2xl font-bold text-black-500">Editar</p>
-                                                    <div id="editar_close" class="modal-close cursor-pointer z-50">
-                                                        <svg class="fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                                                            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
-                                                            </path>
-                                                        </svg>
+
+                                        <div id="editar_panel" class="main-modal fixed w-full inset-0 z-50 overflow-hidden flex justify-center items-center hidden">
+                                            <div class="modal_container bg-white w-4/12 md:max-w-11/12 mx-auto z-50 overflow-y-auto">
+                                                <div class="modal-content py-4 text-left px-6">
+                                                    <div class="flex justify-between items-center pb-3">
+                                                        <p class="text-2xl font-bold text-black-500">Editar</p>
+                                                        <div id="editar_close" class="modal-close cursor-pointer z-50">
+                                                            <svg class="fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                                                                </path>
+                                                            </svg>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="my-5 mr-5 ml-5 flex  justify-center">
-                                                    <form action="./formsUpdate/updateFuncionario.php" method="post" class="w-full max-w-sm">
+                                                    <div class="my-5 mr-5 ml-5 flex  justify-center">
+                                                        <form action="./formsUpdate/updateFuncionario.php" method="post" class="w-full max-w-sm">
 
-                                                        <div class="mb-4">
-                                                            <label for="setor" class="block text-gray-700 text-sm font-bold mb-2">Setor:</label>
-                                                            <input type="text" name="setor" id="setor" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                                                        </div>
+                                                            <div class="mb-4">
+                                                                <label for="setor" class="block text-gray-700 text-sm font-bold mb-2">Setor:</label>
+                                                                <input type="text" name="setor" id="setor" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                                            </div>
 
-                                                        <div class="mb-4">
-                                                            <label for="salario" class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
-                                                            <input type="text" name="salario" id="salario" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                                                        </div>
+                                                            <div class="mb-4">
+                                                                <label for="salario" class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
+                                                                <input type="text" name="salario" id="salario" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                                            </div>
 
-                                                        <div class="mb-4">
-                                                            <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
-                                                            <input type="text" name="nome" id="nome" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                                                        </div>
+                                                            <div class="mb-4">
+                                                                <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
+                                                                <input type="text" name="nome" id="nome" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                                            </div>
 
-                                                        <div class="mb-4">
-                                                            <input type="text" name="valor" value="<?php echo $_SESSION['valor']?>" id="valor" class="hidden" required>
-                                                        </div>
+                                                            <div class="mb-4">
+                                                                <input type="text" name="valor" value="<?php echo $idfuncionario ?>" id="valor" class="hidden" required>
+                                                            </div>
 
-                                                        <div class="flex justify-end gap-2">
-                                                            <button id="editar_cancelar" class="bg-black text-white font-bold py-2 px-4 rounded">
-                                                                Cancelar
-                                                            </button>
-                                                            <button type="submit" class="bg-black text-white font-bold py-2 px-4 rounded">
-                                                                Enviar
-                                                            </button>
-                                                        </div>
-                                                    </form>
+                                                            <?php  print_r($idfuncionario) ?>
+
+                                                            <div class="flex justify-end gap-2">
+                                                                <button id="editar_cancelar" class="bg-black text-white font-bold py-2 px-4 rounded">
+                                                                    Cancelar
+                                                                </button>
+                                                                <button type="submit" class="bg-black text-white font-bold py-2 px-4 rounded">
+                                                                    Enviar
+                                                                </button>
+                                                            </div>
+                                                        </form>
 
 
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                     </div>
 
 
 
                                 </td>
                             </tr>
-                    </tbody>
+                        </tbody>
+
+
+                    <?php
+
+                    }
+                    ?>
                 </table>
             </div>
         </div>
