@@ -70,23 +70,31 @@
                   <label for="senha-login" class="block text-gray-700 text-sm font-bold mb-2">Tipo do prato</label>
                   <select name="tipo-menu" id="">
                     <?php
-                    $listarMenu = viewAll('menucardapio', '*');
+                    $listarMenu = viewAll('*', 'menucardapio');
+                    var_dump($listarMenu);
                     foreach ($listarMenu as $menuItems) {
-                      $idMenu = $menuItems->idmenuCardapio;
+                      $idMenu = $menuItems->idmenucardapio;
                       $nomeMenu = $menuItems->nomeMenu;
                       ?>
                       <option value="<?php echo $idMenu ?>"> <?php echo $nomeMenu ?></option>
-                    <?php
+                      <?php
                     }
                     ?>
                   </select>
                 </div>
                 <div class="mb-4">
                   <label for="senha-login" class="block text-gray-700 text-sm font-bold mb-2">Preço</label>
-                  <input type="password" name="preco" id="senha-login"
+                  <input type="number" name="preco" id="senha-login"
                     class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     required>
                 </div>
+                <div class="mb-4">
+                  <label for="descricao" class="block text-gray-700 text-sm font-bold mb-2">Descrição</label>
+                  <input type="text" name="descricao" id="descricao"
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    required>
+                </div>
+
                 <div class="mb-4">
                   <label for="upload-imagem" class="block text-gray-700 text-sm font-bold mb-2">Imagem</label>
                   <input type="file" name="imagem" id="upload-imagem" accept="image/*"
