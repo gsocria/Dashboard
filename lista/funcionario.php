@@ -62,14 +62,30 @@
                             </div>
                         </div>
                         <div class="my-5 mr-5 ml-5 flex  justify-center">
-                            <form action="#" method="post" class="w-full max-w-sm">
-
+                            <form action="./formsCreate/funcionarioCreate.php" method="post" class="w-full max-w-sm">
                                 <div class="mb-4">
+
                                     <label for="setor" class="block text-gray-700 text-sm font-bold mb-2">Setor:</label>
-                                    <input type="text" name="setor" id="setor"
-                                        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                        required>
-                                </div>
+
+                                    <select name="setor" id="setor" class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                        <?php
+
+                                        $listarProfissao = viewAll('*', 'profissao');
+
+                                        foreach ($listarProfissao as $listarProfissaoItem) {
+                                            $idprofissao = $listarProfissaoItem->idprofissao;
+                                            $profissao = $listarProfissaoItem->profissao;
+
+                                        ?>
+
+                                            <option value="<?php echo $idprofissao ?>"><?php echo $profissao ?></option>
+
+
+                                        <?php
+                                        }
+                                        ?>
+                                    </select>
+
 
                                 <div class="mb-4">
                                     <label for="salario"
@@ -84,6 +100,11 @@
                                     <input type="text" name="nome" id="nome"
                                         class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                         required>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="salario" class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
+                                    <input type="text" name="salario" id="salario" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                                 </div>
 
                                 <div class="flex justify-center">
@@ -114,18 +135,16 @@
                             <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ações</th>
                         </tr>
                     </thead>
-
                     <?php
 
                     $listarFuncionario = viewAll('*', 'funcionario');
 
                     foreach ($listarFuncionario as $listarFuncionarioItem) {
                         $idfuncionario = $listarFuncionarioItem->idfuncionario;
-                        $setor = $listarFuncionarioItem->setor;
+                        $idprofissao = $listarFuncionarioItem->idprofissao;
                         $salario = $listarFuncionarioItem->salario;
                         $nome = $listarFuncionarioItem->nome;
                         $cadastro = $listarFuncionarioItem->cadastro;
-
 
 
                         ?>
@@ -135,13 +154,13 @@
                             <tr class="hover:bg-gray-50">
                                 <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
                                     <div class="text-sm">
-                                        <div class="font-medium text-gray-700">
+                                        <div id="valorId" class="font-medium text-gray-700">
                                             <?php echo $idfuncionario ?>
                                         </div>
                                     </div>
                                 </th>
                                 <td class="px-6 py-4">
-                                    <?php echo $setor ?>
+                                    <?php echo $idprofissao ?>
                                 </td>
                                 <td class="px-6 py-4">
                                     <?php echo $salario ?>
@@ -160,6 +179,7 @@
 
                                     </span>
                                 </td>
+
                                 <td class="px-6 py-4">
                                     <div class="flex justify-start gap-6">
                                         <a x-data="{ tooltip: 'Delete' }" href="#">
@@ -253,22 +273,22 @@
 
 
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-
-
                                 </td>
                             </tr>
-                        </tbody>
 
 
                         <?php
 
                     }
-                    ?>
+                        ?>
+
+                        </tbody>
                 </table>
             </div>
         </div>
