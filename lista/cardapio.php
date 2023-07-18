@@ -20,7 +20,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Eventos</h1>
+          <h1 class="m-0">Cardapio</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -71,7 +71,7 @@
                   <select name="tipo-menu" id="">
                     <?php
                     $listarMenu = viewAll('*', 'menucardapio');
-                    var_dump($listarMenu);
+                   
                     foreach ($listarMenu as $menuItems) {
                       $idMenu = $menuItems->idmenucardapio;
                       $nomeMenu = $menuItems->nomeMenu;
@@ -146,10 +146,6 @@
                 $preco = $listarCardapioItem->preco;
                 $status = $listarCardapioItem->ativo;
                 ?>
-
-
-
-
                 <tr class="hover:bg-gray-50">
                   <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
                     <div class="text-sm">
@@ -159,7 +155,7 @@
                     </div>
                   </th>
                   <td class="px-6 py-4">
-                    <?php echo $img ?>
+                    <img width="50px" height="50px" src="<?php echo $img ?>" alt="">
                   </td>
                   <td class="px-6 py-4">
                     <?php echo $titulo ?>
