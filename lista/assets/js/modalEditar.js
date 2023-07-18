@@ -1,10 +1,10 @@
 
+
+
 function editar(id) {
 
     const editar_panel = document.getElementById('editar_panel' + id);
-    const editar_cancelar = document.getElementById('editar_cancelar' + id);
-    const editar_close = document.getElementById('editar_close' + id)
-
+    console.log(id);
 
     if (editar_panel.classList.contains('hidden')) {
         // Show modal
@@ -22,10 +22,14 @@ function editar(id) {
         editar_panel.classList.remove('open');
     }
 
-    editar_close.addEventListener('click', editar);
-editar_cancelar.addEventListener('click', editar);
+
 
 }
+
+
+editar_close.addEventListener('click', editar);
+editar_cancelar.addEventListener('click', editar);
+
 
 
 

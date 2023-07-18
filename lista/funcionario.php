@@ -59,21 +59,41 @@
                             </div>
                         </div>
                         <div class="my-5 mr-5 ml-5 flex  justify-center">
-                            <form action="#" method="post" class="w-full max-w-sm">
-
+                            <form action="./formsCreate/funcionarioCreate.php" method="post" class="w-full max-w-sm">
                                 <div class="mb-4">
+
                                     <label for="setor" class="block text-gray-700 text-sm font-bold mb-2">Setor:</label>
-                                    <input type="text" name="setor" id="setor" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                                </div>
 
-                                <div class="mb-4">
-                                    <label for="salario" class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
-                                    <input type="text" name="salario" id="salario" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                    <select name="setor" id="setor" class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                        <?php
+
+                                        $listarProfissao = viewAll('*', 'profissao');
+
+                                        foreach ($listarProfissao as $listarProfissaoItem) {
+                                            $idprofissao = $listarProfissaoItem->idprofissao;
+                                            $profissao = $listarProfissaoItem->profissao;
+
+                                        ?>
+
+                                            <option value="<?php echo $idprofissao ?>"><?php echo $profissao ?></option>
+
+
+                                        <?php
+                                        }
+                                        ?>
+                                    </select>
+
+
                                 </div>
 
                                 <div class="mb-4">
                                     <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
                                     <input type="text" name="nome" id="nome" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="salario" class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
+                                    <input type="text" name="salario" id="salario" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                                 </div>
 
                                 <div class="flex justify-center">
@@ -110,7 +130,7 @@
 
                     foreach ($listarFuncionario as $listarFuncionarioItem) {
                         $idfuncionario = $listarFuncionarioItem->idfuncionario;
-                        $setor = $listarFuncionarioItem->setor;
+                        $idprofissao = $listarFuncionarioItem->idprofissao;
                         $salario = $listarFuncionarioItem->salario;
                         $nome = $listarFuncionarioItem->nome;
                         $cadastro = $listarFuncionarioItem->cadastro;
@@ -124,12 +144,12 @@
                                 <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
                                     <div class="text-sm">
                                         <div id="valorId" class="font-medium text-gray-700">
-                                            <?php echo $idfuncionario ?> 
+                                            <?php echo $idfuncionario ?>
                                         </div>
                                     </div>
                                 </th>
                                 <td class="px-6 py-4">
-                                    <?php echo $setor ?>
+                                    <?php echo $idprofissao ?>
                                 </td>
                                 <td class="px-6 py-4">
                                     <?php echo $salario ?>
@@ -158,7 +178,6 @@
                                         </a>
 
                                         <button id="botaoEditar<?php echo $idfuncionario ?>" onClick="editar(<?php echo $idfuncionario ?> )">
-                                        <input type="text" name="valorEditar" value="<?php echo $idfuncionario ?>" class="hidden">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6" x-tooltip="tooltip">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                                             </svg>
@@ -180,26 +199,26 @@
 
                                                             <div class="mb-4">
                                                                 <label for="setor" class="block text-gray-700 text-sm font-bold mb-2">Setor:</label>
-                                                                <input type="text" name="setor"  value="<?php echo $setor ?>" id="setor<?php echo $idfuncionario ?>" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                                                <input type="text" name="setor" id="setor<?php echo $idfuncionario ?>" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                                                             </div>
 
                                                             <div class="mb-4">
                                                                 <label for="salario" class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
-                                                                <input type="text" name="salario" value="<?php echo $salario ?>" id="salario<?php echo $idfuncionario ?>" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                                                <input type="text" name="salario" id="salario<?php echo $idfuncionario ?>" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                                                             </div>
 
                                                             <div class="mb-4">
                                                                 <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
-                                                                <input type="text" name="nome" value="<?php echo $nome ?>" id="nome<?php echo $idfuncionario ?>" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                                                <input type="text" name="nome" id="nome<?php echo $idfuncionario ?>" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                                                             </div>
 
                                                             <div class="mb-4">
-                                                                <input type="number" name="valor" value="<?php echo $idfuncionario ?>" id="valor<?php echo $idfuncionario ?>" class="hidden" >
+                                                                <input type="number" name="valor" value="<?php echo $idfuncionario ?>" id="valor<?php echo $idfuncionario ?>">
                                                             </div>
 
 
                                                             <div class="flex justify-end gap-2">
-                                                                <button id="editar_cancelar<?php echo $idfuncionario ?>" class="bg-black text-white font-bold py-2 px-4 rounded">
+                                                                <button id="editar_cancelar<?php echo $idfuncionario ?>" class="bg-black text-white font-bold py-2 px-4 rounded" type="button">
                                                                     Cancelar
                                                                 </button>
                                                                 <button type="submit" class="bg-black text-white font-bold py-2 px-4 rounded">
@@ -207,6 +226,7 @@
                                                                 </button>
                                                             </div>
                                                         </form>
+
 
                                                     </div>
 
