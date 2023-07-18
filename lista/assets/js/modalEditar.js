@@ -1,11 +1,11 @@
-let editar_open = document.getElementById('editar_open');
-const editar_close = document.getElementById('editar_close');
-const editar_panel = document.getElementById('editar_panel');
-const editar_cancelar = document.getElementById('editar_cancelar');
+
+function editar(id) {
+
+    const editar_panel = document.getElementById('editar_panel' + id);
+    const editar_cancelar = document.getElementById('editar_cancelar' + id);
+    const editar_close = document.getElementById('editar_close' + id)
 
 
-function editar() {
-    
     if (editar_panel.classList.contains('hidden')) {
         // Show modal
         editar_panel.classList.remove('hidden');
@@ -21,9 +21,12 @@ function editar() {
         // Remove animation open
         editar_panel.classList.remove('open');
     }
+
+    editar_close.addEventListener('click', editar);
+editar_cancelar.addEventListener('click', editar);
+
 }
 
-editar_close.addEventListener('click', editar);
-editar_cancelar.addEventListener('click', editar);
+
 
 

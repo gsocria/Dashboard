@@ -21,3 +21,5 @@ if (isset($_POST['setor']) || isset($_POST['salario']) || isset($_POST['nome']) 
         exit();
     }
 }
+
+
