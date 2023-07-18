@@ -2,11 +2,16 @@
 include_once URLBASEPATH . '/config/constantes.php';
 include_once URLBASEPATH . '/config/conexao.php';
 
-function create($table, $fields, $values)
-{
+function create($table, $fields, $values) {
+
     $conn = conectar();
+
+    date_default_timezone_set('America/Sao_Paulo');
+    $dataAtual = date("Y-m-d H:i:s");
+
     try {
-        $listar = $conn->prepare("INSERT INTO $table($fields) VALUES ($values)");
+        $listar = $conn->prepare("INSERT INTO $table($fields, cadastro) VALUES ($values, ?)");
+        $listar->bindValue(1,$dataAtual,PDO::PARAM_STR);
         $listar->execute();
         if ($listar->rowCount() > 0) {
             return $listar->fetchAll(PDO::FETCH_OBJ);
@@ -60,6 +65,7 @@ function deletar($table, $id,$idTable)
     }
 
 }
+
 function viewAll($table, $fields)
 {
     $conn = conectar();
