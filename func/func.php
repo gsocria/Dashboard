@@ -15,9 +15,8 @@ function create($table, $fields, $values)
         }
 
     } catch (PDOException $e) {
-        echo 'Exception:';
-        return ($e->getMessage());
-
+        echo 'Exception:' . $e->getMessage();
+    
     }
 
 }

@@ -46,14 +46,17 @@
                 <button>adicionar</button>
             </div>
 
-            <div id="adicionar_panel" class="main-modal fixed w-full inset-0 z-50 overflow-hidden flex justify-center items-center hidden">
+            <div id="adicionar_panel"
+                class="main-modal fixed w-full inset-0 z-50 overflow-hidden flex justify-center items-center hidden">
                 <div class="modal_container bg-white w-4/12 md:max-w-11/12 mx-auto z-50 overflow-y-auto">
                     <div class="modal-content py-4 text-left px-6">
                         <div class="flex justify-between items-center pb-3">
                             <p class="text-2xl font-bold text-black-500">Adicionar</p>
                             <div id="adicionar_close" class="modal-close cursor-pointer z-50">
-                                <svg class="fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                                <svg class="fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="18"
+                                    height="18" viewBox="0 0 18 18">
+                                    <path
+                                        d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
                                     </path>
                                 </svg>
                             </div>
@@ -63,17 +66,24 @@
 
                                 <div class="mb-4">
                                     <label for="setor" class="block text-gray-700 text-sm font-bold mb-2">Setor:</label>
-                                    <input type="text" name="setor" id="setor" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                    <input type="text" name="setor" id="setor"
+                                        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        required>
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="salario" class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
-                                    <input type="text" name="salario" id="salario" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                    <label for="salario"
+                                        class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
+                                    <input type="text" name="salario" id="salario"
+                                        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        required>
                                 </div>
 
                                 <div class="mb-4">
                                     <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
-                                    <input type="text" name="nome" id="nome" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                    <input type="text" name="nome" id="nome"
+                                        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        required>
                                 </div>
 
                                 <div class="flex justify-center">
@@ -118,7 +128,7 @@
 
 
 
-                    ?>
+                        ?>
                         <tbody class="divide-y divide-gray-100 border-t border-gray-100">
 
 
@@ -143,7 +153,8 @@
                                     <?php echo $cadastro ?>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <span class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600">
+                                    <span
+                                        class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600">
                                         <span class="h-1.5 w-1.5 rounded-full bg-green-600"></span>
                                         Active
 
@@ -152,63 +163,89 @@
                                 <td class="px-6 py-4">
                                     <div class="flex justify-start gap-6">
                                         <a x-data="{ tooltip: 'Delete' }" href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6" x-tooltip="tooltip">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="h-6 w-6"
+                                                x-tooltip="tooltip">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
                                             </svg>
                                         </a>
                                         </a>
 
-                                        <button  onClick="editar()">
-                                            <input class="hidden" type="text" name="editValue" value="<?php echo $idfuncionario ?>">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6" x-tooltip="tooltip">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                                        <button onClick="editar()">
+                                            <input class="hidden" type="text" name="editValue"
+                                                value="<?php echo $idfuncionario ?>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="h-6 w-6"
+                                                x-tooltip="tooltip">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                                             </svg>
                                         </button>
 
 
 
 
-                                        <div id="editar_panel" class="main-modal fixed w-full inset-0 z-50 overflow-hidden flex justify-center items-center hidden">
-                                            <div class="modal_container bg-white w-4/12 md:max-w-11/12 mx-auto z-50 overflow-y-auto">
+                                        <div id="editar_panel"
+                                            class="main-modal fixed w-full inset-0 z-50 overflow-hidden flex justify-center items-center hidden">
+                                            <div
+                                                class="modal_container bg-white w-4/12 md:max-w-11/12 mx-auto z-50 overflow-y-auto">
                                                 <div class="modal-content py-4 text-left px-6">
                                                     <div class="flex justify-between items-center pb-3">
                                                         <p class="text-2xl font-bold text-black-500">Editar</p>
                                                         <div id="editar_close" class="modal-close cursor-pointer z-50">
-                                                            <svg class="fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                                                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                                                            <svg class="fill-current text-gray-500"
+                                                                xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                                viewBox="0 0 18 18">
+                                                                <path
+                                                                    d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
                                                                 </path>
                                                             </svg>
                                                         </div>
                                                     </div>
                                                     <div class="my-5 mr-5 ml-5 flex  justify-center">
-                                                        <form action="./formsUpdate/updateFuncionario.php" method="post" class="w-full max-w-sm">
+                                                        <form action="./formsUpdate/updateFuncionario.php" method="post"
+                                                            class="w-full max-w-sm">
 
                                                             <div class="mb-4">
-                                                                <label for="setor" class="block text-gray-700 text-sm font-bold mb-2">Setor:</label>
-                                                                <input type="text" name="setor" id="setor" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                                                <label for="setor"
+                                                                    class="block text-gray-700 text-sm font-bold mb-2">Setor:</label>
+                                                                <input type="text" name="setor" id="setor"
+                                                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                                                    required>
                                                             </div>
 
                                                             <div class="mb-4">
-                                                                <label for="salario" class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
-                                                                <input type="text" name="salario" id="salario" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                                                <label for="salario"
+                                                                    class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
+                                                                <input type="text" name="salario" id="salario"
+                                                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                                                    required>
                                                             </div>
 
                                                             <div class="mb-4">
-                                                                <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
-                                                                <input type="text" name="nome" id="nome" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                                                <label for="nome"
+                                                                    class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
+                                                                <input type="text" name="nome" id="nome"
+                                                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                                                    required>
                                                             </div>
 
                                                             <div class="mb-4">
-                                                                <input type="text" name="valor" value="<?php echo $idfuncionario ?>" id="valor" class="hidden" required>
+                                                                <input type="text" name="valor"
+                                                                    value="<?php echo $idfuncionario ?>" id="valor"
+                                                                    class="hidden" required>
                                                             </div>
 
-                                                            <?php  print_r($idfuncionario) ?>
+                                                            <?php print_r($idfuncionario) ?>
 
                                                             <div class="flex justify-end gap-2">
-                                                                <button id="editar_cancelar" class="bg-black text-white font-bold py-2 px-4 rounded">
+                                                                <button id="editar_cancelar"
+                                                                    class="bg-black text-white font-bold py-2 px-4 rounded">
                                                                     Cancelar
                                                                 </button>
-                                                                <button type="submit" class="bg-black text-white font-bold py-2 px-4 rounded">
+                                                                <button type="submit"
+                                                                    class="bg-black text-white font-bold py-2 px-4 rounded">
                                                                     Enviar
                                                                 </button>
                                                             </div>
@@ -228,7 +265,7 @@
                         </tbody>
 
 
-                    <?php
+                        <?php
 
                     }
                     ?>

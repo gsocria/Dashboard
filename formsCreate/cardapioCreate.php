@@ -11,16 +11,14 @@ if (isset($_POST['imagem']) || isset($_POST['preco']) || isset($_POST['nome-prat
   $nomePrato = $_POST['nome-prato'];
   $descricao = $_POST['descricao'];
   $tipoMenu = $_POST['tipo-menu'];
-  $MenuCardapio = $_POST['tipo-menu'];
+  $menuCardapio = $_POST['tipo-menu'];
 
-  if (empty($imagem) || empty($preco) || empty($nomePrato) || empty($descricao) || empty($tipoMenu) || empty($MenuCardapio)) {
+  if (empty($imagem) || empty($preco) || empty($nomePrato) || empty($descricao) || empty($tipoMenu) || empty($menuCardapio)) {
     echo "<script> alert(Nao foi possivel criar) </script>";
     return;
   }
 
-  $update = create('cardapio', 'idmenucardapio,preco,imagem,nomePrato,descricao', "'$MenuCardapio','$preco','$imagem','$nomePrato','$descricao'");
+  $update = create('cardapio', 'idmenucardapio,preco,img,nomePrato,descricao', "'$menuCardapio','$preco','$imagem','$nomePrato','$descricao'");
   header('Location: ' . $_SERVER['HTTP_REFERER']);
-  exit();
-
 }
 ?>
