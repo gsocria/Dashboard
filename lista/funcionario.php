@@ -6,8 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/tabela.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-
 
     <title>Document</title>
 </head>
@@ -67,7 +65,8 @@
 
                                     <label for="setor" class="block text-gray-700 text-sm font-bold mb-2">Setor:</label>
 
-                                    <select name="setor" id="setor" class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                    <select name="setor" id="setor"
+                                        class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                         <?php
 
                                         $listarProfissao = viewAll('*', 'profissao');
@@ -76,42 +75,46 @@
                                             $idprofissao = $listarProfissaoItem->idprofissao;
                                             $profissao = $listarProfissaoItem->profissao;
 
-                                        ?>
+                                            ?>
 
                                             <option value="<?php echo $idprofissao ?>"><?php echo $profissao ?></option>
 
 
-                                        <?php
+                                            <?php
                                         }
                                         ?>
                                     </select>
 
 
-                                <div class="mb-4">
-                                    <label for="salario"
-                                        class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
-                                    <input type="text" name="salario" id="salario"
-                                        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                        required>
-                                </div>
+                                    <div class="mb-4">
+                                        <label for="salario"
+                                            class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
+                                        <input type="text" name="salario" id="salario"
+                                            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                            required>
+                                    </div>
 
-                                <div class="mb-4">
-                                    <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
-                                    <input type="text" name="nome" id="nome"
-                                        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                        required>
-                                </div>
+                                    <div class="mb-4">
+                                        <label for="nome"
+                                            class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
+                                        <input type="text" name="nome" id="nome"
+                                            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                            required>
+                                    </div>
 
-                                <div class="mb-4">
-                                    <label for="salario" class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
-                                    <input type="text" name="salario" id="salario" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                                </div>
+                                    <div class="mb-4">
+                                        <label for="salario"
+                                            class="block text-gray-700 text-sm font-bold mb-2">Salario:</label>
+                                        <input type="text" name="salario" id="salario"
+                                            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                            required>
+                                    </div>
 
-                                <div class="flex justify-center">
-                                    <button type="submit" class="bg-black text-white font-bold py-2 px-4 rounded">
-                                        Enviar
-                                    </button>
-                                </div>
+                                    <div class="flex justify-center">
+                                        <button type="submit" class="bg-black text-white font-bold py-2 px-4 rounded">
+                                            Enviar
+                                        </button>
+                                    </div>
                             </form>
 
 
@@ -283,12 +286,12 @@
                             </tr>
 
 
-                        <?php
+                            <?php
 
                     }
-                        ?>
+                    ?>
 
-                        </tbody>
+                    </tbody>
                 </table>
             </div>
         </div>

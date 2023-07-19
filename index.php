@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+
+
 <html lang="en">
 <?php
 include_once './config/constantes.php';
@@ -20,6 +23,7 @@ include_once URLBASEPATH . '/func/func.php';
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
+
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 
   <link rel="stylesheet" href="./lista/assets/css/tabela.css">
@@ -219,7 +223,7 @@ include_once URLBASEPATH . '/func/func.php';
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" id="rota" routes="funcionarios" class="nav-link routes">
+                  <a href="#" id="funcionario" routes="funcionarios" class="nav-link routes">
                     <p>Funcionarios</p>
                   </a>
                 </li>
@@ -265,14 +269,13 @@ include_once URLBASEPATH . '/func/func.php';
 
   <!-- REQUIRED SCRIPTS -->
 
-  <script src="./lista/assets/js/modalAdicionar.js"></script>
-  <script src="./lista/assets/js/modalEditar.js"></script>
-
+  
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>
 
   <script src="./lista/assets/js/navegacao.js"></script>
   <!-- Bootstrap -->
+
   <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE -->
   <script src="dist/js/adminlte.js"></script>

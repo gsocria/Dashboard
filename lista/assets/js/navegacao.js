@@ -1,4 +1,4 @@
-
+$(document).ready(function () {
   $('.routes').click(function (e) {
     e.preventDefault();
 
@@ -21,3 +21,4 @@
       }
     });
   });
+});
