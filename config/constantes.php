@@ -2,6 +2,8 @@
 date_default_timezone_set('America/Sao_Paulo');
 setlocale(LC_ALL, 'pt_BR');
 session_start();
+
+define('ROOT_PATH', dirname(__FILE__));
 define('URLBASEPATH', __DIR__ . '/../');
 define('BASEPATH', __DIR__ . DIRECTORY_SEPARATOR);
 define('BASEPATHFILE', __FILE__);
