@@ -72,5 +72,3 @@
     </div>
     <!-- /.content -->
 </body>
-
-</html>
