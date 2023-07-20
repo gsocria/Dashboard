@@ -11,6 +11,7 @@ switch ($request) {
   case 'eventos':
     include_once('lista/eventos.php');
     break;
-
+    case 'adicionarModal':
+      include_once('./formsCreate/eventosCreate.php');
+      break; 
 }
-?>
